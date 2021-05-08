@@ -1,0 +1,214 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title th:text="${title}"></title>
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+<!-- Font-Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+</head>
+<body>
+<!-- Start Header Section -->
+<section id="header">
+	<div class="container">
+		<img th:src="@{/img/logo.png}" class="logo">
+		<div class="header-text">
+			<h1>Welcome To Smart Contact Manager,<br> Make a own storage</h1>
+			<span class="square"></span>
+			<p>Smart contact manager is store your contacts on the web safe and secure way and you will access anywhere and any time. Your don't worry your contacts totally secured that will only you access your contacts.</p>
+			<a th:href="@{/signup}"><button class="common-btn">Sign Up</button></a>
+			<a th:href="@{/signin}"><button class="common-btn">Sign In</button></a>
+			<div class="line">
+				<div><span class="line-1"></span></div><br>
+				<div><span class="line-2"></span></div><br>
+				<div><span class="line-3"></span></div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Header Section -->
+
+<!-- Start Navbar -->
+<nav id="sideNav">
+	<ul>
+		<li><a href="#header"><span><i class="fas fa-home"></i></span> Home</a></li>
+		<li><a href="#about"><span><i class="fas fa-address-card"></i></span> About</a></li>
+		<li><a href="#features"><span><i class="fab fa-foursquare"></i></span> Features</a></li>
+		<li><a href="#services"><span><i class="fab fa-sellcast"></i></span> Services</a></li>
+		<li><a href="#contact"><span><i class="fas fa-id-card"></i></span> Contact</a></li>
+	</ul>
+</nav>
+<img th:src="@{/img/menu.png}" id="menuBtn"/>
+<!-- End Navbar -->
+
+<!-- Start About Us -->
+<section id="about">
+	<div class="about-left-col">
+		<img th:src="@{/img/about.png}" alt="" />
+	</div>
+	<div class="about-right-col">
+		<div class="about-text">
+			<h1>About Us</h1>
+			<span class="square"></span>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus obcaecati nobis eaque fuga fugiat eligendi. Magni voluptatibus tempore modi minus perferendis odit blanditiis excepturi asperiores odio et eveniet cumque sequi architecto aperiam iusto rem deserunt rerum similique facere labore suscipit!</p><br><br>
+			<div class="line">
+				<div><span class="line-1"></span></div><br>
+				<div><span class="line-2"></span></div><br>
+				<div><span class="line-3"></span></div>
+			</div>
+			<h2>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam a ab ullam tempora sint laborum facilis doloremque mollitia voluptates provident!"</h2>
+			<h3>---Sourabh Fulmali</h3>
+		</div>
+	</div>
+</section>
+<!-- End About Us -->
+
+<!-- Start Features -->
+<section id="features">
+	<div class="feature-row">
+		<div class="feature-col">
+			<img th:src="@{/img/pic-1.png}" alt="" />
+			<h4>Unlimited Access</h4>
+			<p>Switch between your computer, tablet or mobile devices</p>
+		</div>
+		<div class="feature-col">
+			<img th:src="@{/img/pic-2.png}" alt="" />
+			<h4>Unlimited Storage</h4>
+			<p>Switch between your computer, tablet or mobile devices</p>
+		</div>
+		<div class="feature-col">
+			<img th:src="@{/img/pic-3.png}" alt="" />
+			<h4>Access Anywhere</h4>
+			<p>Switch between your computer, tablet or mobile devices</p>
+		</div>
+	</div>
+	<div class="feature-btn">
+		<div class="line">
+			<div><span class="line-1"></span></div><br>
+			<div><span class="line-2"></span></div><br>
+			<div><span class="line-3"></span></div>
+		</div>
+		<button class="common-btn">Start Free Trial</button>
+	</div>
+</section>
+<!-- End Features -->
+
+<!-- Start Services -->
+<section id="services">
+	<div class="container service-row">
+		<div class="service-left-col">
+			<div class="service-text">
+				<h1>Browse our top <br> services</h1>
+				<span class="square"></span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat distinctio maiores hic rerum nostrum unde ab totam quasi facere soluta quibusdam ex eius assumenda nam.</p>
+				<button class="common-btn">View All Services</button>
+				<div class="line">
+					<div><span class="line-1"></span></div><br>
+					<div><span class="line-2"></span></div><br>
+					<div><span class="line-3"></span></div>
+				</div>
+			</div>
+		</div>
+		<div class="service-right-col">
+			<img th:src="@{/img/course.png}" alt="" />
+		</div>
+	</div>
+</section>
+<!-- End Service -->
+
+<!-- Start Contact -->
+<section id="contact">
+	<div class="container contact-row">
+		<div class="contact-left-col">
+			<img th:src="@{/img/contacts.png}" alt="" />
+		</div>
+		<div class="contact-right-col">
+			<h1>Contact us<br>into 24X7 </h1><br>
+			<form th:action="@{/contact-form}" method="post">
+				<input type="text" name="name" placeholder="Enter Name" required="required">
+				<input type="email" name="email" placeholder="Enter Email" required="required">
+				<input type="text" name="subject" placeholder="Enter subject" required="required">
+				<textarea rows="3" maxlength="1000" name="message" placeholder="Enter message can be only 1000 characters" required="required"></textarea>		
+				<div class="btn-box">
+					<button type="submit" class="common-btn">Send Message</button>
+					<button type="reset" class="common-btn">Reset</button>
+				</div>
+				<div th:if="${message}=='success'" class="success-msg">
+					<div>message is sent successfully</div>
+				</div>
+				<div th:if="${message}=='error'" class="error-msg">
+					<div>message is not sent</div>
+				</div>
+			</form>
+			<div class="line">
+				<div><span class="line-1"></span></div><br>
+				<div><span class="line-2"></span></div><br>
+				<div><span class="line-3"></span></div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Contact -->
+
+<!-- Start Footer -->
+<footer>
+	<div class="container footer-row">
+		<hr/>
+		<div class="footer-left-col">
+			<div class="footer-links">
+				<div class="link-title">
+					<h4>Product</h4>
+					<small>Our Plan</small><br>
+					<small>Free Trial</small>
+				</div>
+				<div class="link-title">
+					<h4>About Us</h4>
+					<small>Request Demo</small><br>
+					<small>FAQs</small>
+				</div>
+				<div class="link-title">
+					<h4>Support</h4>
+					<small>Features</small><br>
+					<small>Contact Us</small>
+				</div>
+				<div class="link-title">
+					<h4>Explore</h4>
+					<small>Find a non-profit</small><br>
+					<small>Corporate Solution</small>
+				</div>
+			</div>
+		</div>
+		<div class="footer-right-col">
+			<div class="footer-info">
+			<div class="copyright-text">
+				<small>support@scm.com</small><br>
+				<small>copyright 2021 scm</small>
+			</div>
+			<div class="footer-logo">
+				<img th:src="@{/img/logo.png}"/>
+				<button class="common-btn">English</button>
+			</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- End Footer -->
+
+<!-- Start social-icons -->
+<div class="social-icons">
+	<img th:src="@{/img/facebook.png}"/>
+	<img th:src="@{/img/instagram.png}"/>
+	<img th:src="@{/img/twitter.png}"/>
+	<img th:src="@{/img/linkedin.png}"/>
+</div>
+<!-- End social-icons -->
+
+<!-- Custom JS File -->
+<script type="text/javascript" th:src="@{/js/home.js}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${title}"></title>
+</head>
+<body>
+
+	<section>
+		
+			<div class="card mx-2 my-2">
+			
+			<div class="card-body">
+			
+				<h1 class="text-center text-muted"><span><img th:src="@{/icons/user.png}" alt="" /></span> Update Contact Details</h1>
+				
+				<div class="container-fluid">
+				
+					<div class="row">
+					
+						<div class="col-md-8">
+						
+						<div class="col-md-12 offset-md-2">
+						
+							<!-- start form -->
+							
+							<form
+							method="POST"
+							th:obeject="${contact}"
+							th:action="@{/user/update-contact}"
+							class="mt-2"
+							enctype="multipart/form-data"
+							>
+							
+							<!-- hidden data -->
+							<input type="hidden" th:value="${contact.cId}" name="cId"/>
+							
+							<!-- First Name -->
+							
+						   <div class="input-group mb-3">
+						   
+ 							<span class="input-group-text" id="basic-addon1"><img th:src="@{/icons/friend-add.png}" alt="" /></span>
+ 							 
+  							<input type="text" 
+  							name="name" 
+  							class="form-control" 
+  							placeholder="Enter name here" 
+  							aria-label="Username" 
+  							aria-describedby="basic-addon1" 
+  							required="required"
+  							th:value="${contact.name}"
+							>
+							
+							</div>
+						   
+						   <!-- Second Name -->
+						   
+						   <div class="input-group mb-3">
+						   
+ 							<span class="input-group-text" id="basic-addon1"><img th:src="@{/icons/check-lists.png}" alt="" /></span>
+ 							 
+  							<input th:value="${contact.secondName}"  type="text" name="secondName" class="form-control" placeholder="Enter nick name here" aria-label="Username" aria-describedby="basic-addon1">
+							
+							</div>
+						   
+						    <!-- Phone Field -->
+						   
+						   <div class="input-group mb-3">
+						   
+ 							<span class="input-group-text" id="basic-addon1"><img th:src="@{/icons/phone.png}" alt="" /></span>
+ 							 
+  							<input type="number" 
+  							  name="phone"
+  							  class="form-control"
+  							  placeholder="Enter number here" 
+  							  aria-label="Username" 
+  							  aria-describedby="basic-addon1"
+  							  required="required"
+  							  min="10"
+  							  th:value="${contact.phone}"
+  							  >
+							
+							</div>
+						   
+						   <!-- Email Field -->
+						   
+						    <div class="input-group mb-3">
+						   
+ 							<span class="input-group-text" id="basic-addon1"><img th:src="@{/icons/new-message.png}" alt="" /></span>
+ 							 
+  							<input th:value="${contact.email}" required="required" type="email" name="email" class="form-control" placeholder="Enter email here" aria-label="Username" aria-describedby="basic-addon1">
+							
+							</div>
+						   
+						     
+						   <!-- Work Field -->
+						   
+						   <div class="input-group mb-3">
+						   
+ 							<span class="input-group-text" id="basic-addon1"><img th:src="@{/icons/briefcase32.png}" alt="" /></span>
+ 							 
+  							<input th:value="${contact.work}" type="text" name="work" class="form-control" placeholder="Enter work here" aria-label="Username" aria-describedby="basic-addon1">
+							
+							</div>
+						   
+						  
+						   <!-- Description Field -->
+						   
+						   <div class="mb-3">
+						   
+ 							<span class="input-group-text" id="basic-addon1"><img th:src="@{/icons/description.png}" alt="" /></span>
+ 							 
+  							<textarea th:text="${contact.description}" name="description" id="mytextarea" class="form-control" placeholder="Enter contact description here"></textarea>
+							
+							</div>
+						
+							<!-- Image Field -->
+						   
+							<div class="input-group mb-3">
+		 						
+		 						<div class="container text-center">
+		 						
+		 						 	 <img src="" class="my_profile_picture" th:src="@{'/img/'+${contact.image}}"></img>
+		 					      
+		 							 <p class="text-secondary">Choose a new profile picture</p>
+		 							
+		 						</div>
+		 					
+  							
+  							<input type="file" name="profileImage"/>
+							
+							</div>
+						
+							<div class="text-center"><button type="submit" class="btn btn-outline-success">Save Contact</button></div>
+							
+							</form>
+							<!-- end form -->
+						   </div>
+						</div>
+					
+					</div>
+					
+				
+				</div>
+			
+			</div>
+			
+		</div>
+	<!-- integration of tiny text editor -->
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+	 
+	 <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+
+	</section>
+
+</body>
+</html>

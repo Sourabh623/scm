@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${title}"></title>
+
+</head>
+<body>
+
+	<section>
+	
+		<div class="card mx-2 my-2">
+			
+			<div class="card-body">
+			
+				<h1 class="text-center text-muted"><span><img th:src="@{/icons/user.png}" alt="" /></span>Change Password</h1>
+				
+				<div class="container-fluid">
+				
+					<div class="row">
+					
+						<div class="col-md-8">
+						
+							<div class="col-md-12 offset-md-2">
+								
+								<!-- start form -->
+							
+							<form th:action="@{/user/change-password}" method="post">
+							
+							
+							<!-- old password field -->
+							
+						   <div class="input-group mb-3">
+						   
+ 							<span class="input-group-text" id="basic-addon1"><img th:src="@{/icons/friend-add.png}" alt="" /></span>
+ 							 
+  							<input type="text" 
+  							name="oldPassword" 
+  							class="form-control" 
+  							placeholder="Enter your old password here" 
+  							required="required"
+							>
+							
+							</div>
+						   
+						   <!-- new password field -->
+						   
+						   <div class="input-group mb-3">
+						   
+ 							<span class="input-group-text" id="basic-addon1"><img th:src="@{/icons/check-lists.png}" alt="" /></span>
+ 							 
+  							<input type="password" name="newPassword" class="form-control" placeholder="Enter your new password here" required="required">
+							
+							</div>
+						   
+						
+							<div class="text-center">
+							<button type="submit" class="btn btn-outline-success">Save</button>
+							<button type="reset" class="btn btn-outline-danger">Reset</button>
+							</div>
+							
+							</form>
+							<!-- end form -->
+								
+							</div>
+						
+							
+						
+						</div>
+					
+					</div>
+					
+				
+				</div>
+			
+			</div>
+			
+		</div>
+
+    
+	<script>
+			$('.item').removeClass('active');
+			$('#settings-link').addClass('active');
+	</script>	
+	
+	</section>
+
+</body>
+</html>
